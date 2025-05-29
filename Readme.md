@@ -3,4 +3,4 @@
 
 
 ![Screenshot](/PICTURES/BLACK_PILL.JPG)
-![Screenshot](/PICTURES/ASM.JPG)
+![Screenshot](/PICTURES/ASM.jpg)
