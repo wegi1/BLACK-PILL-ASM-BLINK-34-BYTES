@@ -1,0 +1,33 @@
+
+_BLACK_PILL_ASM_BLINK.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text.Reset_Handler 00000022  08000000  08000000  00001000  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .ARM.attributes 00000021  00000000  00000000  00001022  2**0
+                  CONTENTS, READONLY
+
+Disassembly of section .text.Reset_Handler:
+
+08000000 <Reset_Handler-0x8>:
+ 8000000:	40023800 	.word	0x40023800
+ 8000004:	08000009 	.word	0x08000009
+
+08000008 <Reset_Handler>:
+ 8000008:	2204      	movs	r2, #4
+ 800000a:	920c      	str	r2, [sp, #48]	@ 0x30
+ 800000c:	f5bd 5040 	subs.w	r0, sp, #12288	@ 0x3000
+ 8000010:	0611      	lsls	r1, r2, #24
+ 8000012:	6001      	str	r1, [r0, #0]
+ 8000014:	02d3      	lsls	r3, r2, #11
+
+08000016 <LOOP01>:
+ 8000016:	405a      	eors	r2, r3
+ 8000018:	6142      	str	r2, [r0, #20]
+ 800001a:	0199      	lsls	r1, r3, #6
+
+0800001c <LOOP02>:
+ 800001c:	3901      	subs	r1, #1
+ 800001e:	d1fd      	bne.n	800001c <LOOP02>
+ 8000020:	d0f9      	beq.n	8000016 <LOOP01>
